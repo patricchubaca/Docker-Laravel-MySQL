@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->boolean('nottify_email')->default(true);
+            $table->integer('role')->default(true);
             $table->timestamps();
         });
     }
