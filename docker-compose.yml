@@ -53,6 +53,7 @@ services:
         image: especializati/laravel-app
         restart: unless-stopped
         command: "php artisan queue:work"
+
         volumes:
             - ./:/var/www
         depends_on:
