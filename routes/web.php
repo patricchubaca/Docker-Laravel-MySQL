@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', function () {
+    $couse = Course::with('modules')->first();
+
+    dd($couse);
+});
+
+Route::get('/one', function () {
 
     $preferences =  User::with('preference')->find(2);
 
