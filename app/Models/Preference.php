@@ -9,6 +9,12 @@ class Preference extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nottify_email',
+        'role'
+    ];
+
+
     public function user()
     {
         return $this->belongsTo('user');

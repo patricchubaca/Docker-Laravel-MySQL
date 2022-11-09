@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/one', function () {
-    return view('welcome');
-});
 
 Route::get('/', function () {
-    $user =  User::first();
 
-    dd($user);
+    $preferences =  User::with('preference')->find(2);
+
+    $user = User::find(2);
+
+    dd($user->preference()->get(), $preferences, $user);
 });
